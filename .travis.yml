@@ -17,8 +17,5 @@ branches:
 
 cache: yarn
 
-deploy:
-  provider: firebase
-  skip_cleanup: true
-  token:
-    secure: $FIREBASE_TOKEN
+after_success:
+  - firebase deploy --token $FIREBASE_TOKEN
